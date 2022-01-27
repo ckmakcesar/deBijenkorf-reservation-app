@@ -1,0 +1,32 @@
+{
+  "name": "de-bijenkorf-reservations-server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/server.js",
+  "scripts": {
+    "watch": "nodemon ./src/server.js",
+    "start": "node ./src/server.js",
+    "lint": "eslint \"**/*.js\"",
+    "fixlint": "eslint --fix \"**/*.js\"",
+    "test": "jest --all",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "config": "^3.3.7",
+    "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "express-validator": "^6.14.0",
+    "keymirror": "^0.1.1",
+    "moment": "^2.29.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.14.1",
+    "winston": "^3.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-plugin-react": "^7.28.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15"
+  }
+}
