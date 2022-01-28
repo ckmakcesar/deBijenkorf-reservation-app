@@ -15,16 +15,22 @@ A simple docker-compose solution has been prepared to make the DB accessible to 
 
 ## 2. Running on Local Environment, using Node.JS
 
-# Client
+### Client
 
 `>>some command<<`
 
-# Server
+### Server
 
 `>>some command<<`
 
-# DB
+### DB
 
 It can either be a Postgres docker container, or the Postgres service running on your machine. The major thing to note is that it should be using port **15432** on the host machine, no matter it is inside a container or not.
 
 `>>some command<<`
+
+## TODOs
+
+1. Unit Test
+2. Containerization (docker compose)
+3. Cypress??
