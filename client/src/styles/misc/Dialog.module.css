@@ -1,0 +1,29 @@
+.dialogBackground {
+  position: fixed;
+  top: 0;
+  left: auto;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--opaque-color);
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialogBody {
+  min-height: 40%;
+  max-height: 80%;
+  width: 60%;
+  overflow: scroll;
+  background-color: #efefef;
+  border: 8px solid #efefef;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.dialogButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 16px;
+}

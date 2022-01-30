@@ -5,7 +5,7 @@ const Reservation = {
   storeId: PropTypes.number.isRequired,
   statusId: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
 };
 

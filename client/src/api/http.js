@@ -8,7 +8,10 @@ const http = axios.create({
 
 const responseHandler = (response) => response.data;
 
-const errorHandler = (error) => Promise.reject(error.response?.data || { message: ERRORS.common.REQUEST_FAILURE_UNKNOWN });
+const errorHandler = (error) => (
+  Promise.reject(error.response?.data
+    || { message: ERRORS.common.REQUEST_FAILURE_UNKNOWN })
+);
 
 http.interceptors.response.use(
   (response) => responseHandler(response),

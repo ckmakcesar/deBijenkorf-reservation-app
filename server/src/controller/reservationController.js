@@ -2,6 +2,8 @@ const express = require('express');
 const { param, body } = require('express-validator');
 
 const Reservation = require('../models/Reservation');
+const Store = require('../models/Store');
+const Status = require('../models/Status');
 const { isValidRequest } = require('../utils/utils');
 
 const reservationController = express.Router();
@@ -12,15 +14,15 @@ reservationController.post(
     body('name').isString(),
     body('storeId').isInt(),
     body('statusId').toInt(),
-    body('time').isDate(),
+    body('date').isDate(),
   ],
   async (req, res) => {
     if (!isValidRequest(req, res)) return; // when req is NOT valid, res.sent with error and exit
 
     try {
       const newReservation = req.body;
-      const data = await Reservation.create(newReservation);
-      res.status(201).json(data);
+      const createdReservation = await Reservation.create(newReservation);
+      res.status(201).json(createdReservation);
     } catch (e) {
       res.status(400).json({
         message: e?.name,
@@ -33,10 +35,10 @@ reservationController.post(
 reservationController.get(
   '/',
   async (_, res) => {
-    const data = await Reservation.findAll({
-      order: [['time', 'ASC']], // default: order by time, in ascending order
+    const reservations = await Reservation.findAll({
+      order: [['date', 'ASC']], // default: order by date, in ascending order
     });
-    res.status(200).json(data);
+    res.status(200).json(reservations);
   },
 );
 
@@ -47,16 +49,16 @@ reservationController.put(
     body('name').optional().isString(),
     body('storeId').optional().isInt(),
     body('statusId').optional().toInt(),
-    body('time').optional().isDate(),
+    body('date').optional().isDate(),
   ],
   async (req, res) => {
     if (!isValidRequest(req, res)) return; // when req is NOT valid, res.sent with error and exit
 
-    const { name, storeId, statusId, time } = req.body;
-    if (!name && !storeId && !statusId && !time) {
+    const { name, storeId, statusId, date } = req.body;
+    if (!name && !storeId && !statusId && !date) {
       res.status(400).json({
         message: 'Request Validation Error',
-        details: 'At least one of the fields { name, storeId, statusId, time } needs to be updated',
+        details: 'At least one of the fields { name, storeId, statusId, date } needs to be updated',
       });
       return; // when req is NOT valid, res.sent with error and exit
     }
@@ -68,7 +70,7 @@ reservationController.put(
         name,
         storeId,
         statusId,
-        time,
+        date,
       });
       res.status(200).json(updatedReservation);
     } else {
@@ -91,6 +93,22 @@ reservationController.delete(
     } else {
       res.status(404).json({ message: 'Resource Not Found' });
     }
+  },
+);
+
+reservationController.get(
+  '/stores',
+  async (_, res) => {
+    const stores = await Store.findAll();
+    res.status(200).json(stores);
+  },
+);
+
+reservationController.get(
+  '/statuses',
+  async (_, res) => {
+    const statuses = await Status.findAll();
+    res.status(200).json(statuses);
   },
 );
 

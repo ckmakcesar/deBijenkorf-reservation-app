@@ -8,7 +8,8 @@ CREATE TABLE store (
 
 CREATE TABLE status (
   id SERIAL PRIMARY KEY,
-  code VARCHAR(128) NOT NULL UNIQUE
+  code VARCHAR(128) NOT NULL UNIQUE,
+  name VARCHAR(128) NOT NULL UNIQUE
 );
 
 CREATE TABLE reservation (
@@ -18,7 +19,7 @@ CREATE TABLE reservation (
       REFERENCES store(id),
   status_id INTEGER NOT NULL
       REFERENCES status(id),
-  time TIMESTAMP NOT NULL,
+  date TIMESTAMP NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

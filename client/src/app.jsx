@@ -4,11 +4,17 @@ import { BrowserRouter } from 'react-router-dom';
 
 import store from './store/store';
 import Routes from './routes';
+import ToastNotification from './components/misc/ToastNotification';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Routes />
+
+      {/* Global Level Components Below */}
+      <ToastNotification />
     </BrowserRouter>
   </Provider>
 );

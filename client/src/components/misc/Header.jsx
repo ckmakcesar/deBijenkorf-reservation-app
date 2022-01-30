@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from '../../styles/misc/Header.module.css';
+
 const Header = ({
   text,
-}) => {
-  // TODO
-
-  return (
-    <div className='root'>
-      <h1>{text}</h1>
-
+}) => (
+  <div className={styles.headerRoot}>
+    <div className={styles.headerText}>
+      {text}
     </div>
-  );
-};
+  </div>
+);
 
 // *********************************************************************************************************************
 // PROPS

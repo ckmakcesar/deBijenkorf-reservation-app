@@ -7,7 +7,7 @@ const Reservation = sequelize.define('reservation', {
   name: { type: DataTypes.STRING, allowNull: false },
   storeId: { type: DataTypes.INTEGER, allowNull: false },
   statusId: { type: DataTypes.INTEGER, allowNull: false },
-  time: { type: DataTypes.DATEONLY, allowNull: false },
+  date: { type: DataTypes.DATEONLY, allowNull: false },
   createdAt: { type: DataTypes.DATE, allowNull: false, defaultValue: Sequelize.NOW },
 }, {
   freezeTableName: true,
