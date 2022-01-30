@@ -1,0 +1,22 @@
+{
+  "name": "de-bijenkorf-reservations",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build-client": "cd client && yarn build",
+    "fixlint-client": "cd client && yarn fixlint",
+    "fixlint-server": "cd server && yarn fixlint",
+    "fixlint": "yarn fixlint-server && yarn fixlint-client",
+    "lint-client": "cd client && yarn lint",
+    "lint-server": "cd server && yarn lint",
+    "lint": "yarn lint-client && yarn lint-server",
+    "test": "yarn test-server && yarn test-client",
+    "test-server": "cd server && yarn test",
+    "test-client": "cd client && yarn test",
+    "coverage": "(cd server; yarn coverage) && (cd client; yarn coverage)",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
+}
