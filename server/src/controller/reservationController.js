@@ -38,6 +38,7 @@ reservationController.get(
     const reservations = await Reservation.findAll({
       order: [['date', 'ASC']], // default: order by date, in ascending order
     });
+    // console.log(reservations)
     res.status(200).json(reservations);
   },
 );

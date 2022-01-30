@@ -11,12 +11,12 @@
   align-items: center;
 }
 .dialogBody {
-  min-height: 40%;
+  min-height: 30%;
   max-height: 80%;
-  width: 60%;
+  width: 600px;
   overflow: scroll;
-  background-color: #efefef;
-  border: 8px solid #efefef;
+  background-color: white;
+  border: 8px solid white;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -26,4 +26,13 @@
   flex-direction: row;
   justify-content: end;
   gap: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .dialogBody {
+    width: 90%;
+  }
+  .dialogButtons {
+    gap: 8px;
+  }
 }

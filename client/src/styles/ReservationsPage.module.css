@@ -8,3 +8,13 @@
   flex-direction: row;
   justify-content: flex-end;
 }
+.dialogContent {
+  padding-bottom: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .dialogContent {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

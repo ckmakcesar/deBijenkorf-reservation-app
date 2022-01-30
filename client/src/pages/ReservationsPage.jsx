@@ -93,7 +93,7 @@ const ReservationsPage = ({
         onClose={() => { setReservationToDelete(null); }}
         onConfirm={handleDeleteReservation}
       >
-        <div>
+        <div className={styles.dialogContent}>
           {`You are about to delete the reservation 
           '${reservationToDelete?.name}'. If you proceed with this 
           action the item will be permanently deleted.`}

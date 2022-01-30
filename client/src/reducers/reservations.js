@@ -101,6 +101,12 @@ const reservations = (state = initialState, action) => {
         statusesMap: mapByKey(action.payload, 'id'),
       };
 
+    case ActionType.RESERVATION_LOADING_COMPLETE:
+      return {
+        ...state,
+        loading: false,
+      };
+
     default:
       return state;
   }
