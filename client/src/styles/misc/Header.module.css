@@ -1,0 +1,8 @@
+.headerRoot {
+  flex-shrink: 0;
+}
+.headerText {
+  padding: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}

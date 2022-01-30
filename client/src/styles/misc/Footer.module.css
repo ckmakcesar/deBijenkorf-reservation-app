@@ -1,0 +1,11 @@
+.footerRoot {
+  flex-shrink: 0;
+}
+.footerWrapper {
+  padding: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.footerReducedPadding {
+  padding: 16px;
+}

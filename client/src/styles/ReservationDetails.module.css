@@ -1,0 +1,37 @@
+.reservationDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 4px;
+}
+.reservationDetailsLeft {
+  flex-direction: column;
+}
+.reservationDetailsName {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.reservationDetailsContext {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  padding-top: 4px;
+  color: var(--lighter-gray-color);
+}
+.reservationDetailsRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.reservationDetailsStatus {
+  text-align: right;
+}
+
+.reservationDetailsHover {
+  background-color: var(--hover-color);
+}

@@ -1,0 +1,89 @@
+.buttonContainer {
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  color: var(--primary-color);
+  background-color: white;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.buttonOuter {
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: white;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  padding: 1px 0;
+}
+
+.button {
+  padding: 4px 12px;
+  width: max-content;
+  height: max-content;
+  background-color: white;
+  color: var(--primary-color) !important;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  vertical-align: middle;
+}
+.buttonReducedLeftPadding {
+  padding: 4px 12px 4px 8px;
+}
+.buttonOuterHover {
+  border-color: var(--hover-color);
+}
+
+.buttonIcon {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  padding-left: 8px;
+  vertical-align: middle;
+}
+.hover {
+  background-color: var(--hover-color) !important;
+}
+.disabled {
+  color: var(--disabled-font-color) !important;
+}
+
+/* Alternative Styles */
+.secondary {
+  border-color: white;
+}
+.secondaryHover {
+  background-color: #efefef;
+  border-color: #efefef;
+}
+.red {
+  background-color: #E51400;
+  border-color: #E51400;
+  color: white !important;
+}
+.redHover {
+  border-color: #bf0c0c;
+  background-color: #bf0c0c;
+  color: white !important;
+}
+.green {
+  background-color: #51d455c7;
+  border-color: #51d455c7;
+  color: white !important;
+}
+.greenHover {
+  border-color: #4caf50;
+  background-color: #4caf50;
+  color: white !important;
+}
+.blue {
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+  color: white !important;
+}
+.blueHover {
+  border-color: #0288d1;
+  background-color: #0288d1;
+  color: white !important;
+}

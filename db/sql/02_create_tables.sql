@@ -19,7 +19,7 @@ CREATE TABLE reservation (
       REFERENCES store(id),
   status_id INTEGER NOT NULL
       REFERENCES status(id),
-  time TIMESTAMP NOT NULL,
+  date TIMESTAMP NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -1,0 +1,10 @@
+.reservationsPageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.createReservationButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

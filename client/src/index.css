@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
+
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+
+body {
+  font-family: "Montserrat";
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+:root {
+  /* Colors */
+  /* --primary-color: purple;
+  --hover-color: red;
+  --disabled-color: blue;
+  --disabled-font-color: green; */
+  --primary-color: black;
+  --hover-color: #EFEFEF;
+  --disabled-color: #EEEEEE;
+  --disabled-font-color: #BBBBBB;
+  --opaque-color: rgba(0, 0, 0, 0.2);
+  --lighter-gray-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Generic Styles -> kebab-case; CSS Modules -> camelCase */
+.flex-grow {
+  display: flex;
+  flex-grow: 1;
+}
+
+.input-field-label {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+.input-field-label > div:first-child {
+  margin-bottom: 8px;
+}
+
+select{
+  border: 1px solid #767676;
+  border-radius: 4px;
+}
+input {
+  border: 1px solid #767676;
+  border-radius: 4px;
+  text-indent: 2px;
+}
+input[type="radio"] {
+  margin: auto 4px !important;
+}
+
+#root {
+  height: 100%;
+}
+
+.flex-content {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 4px 24px;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid var(--opaque-color);
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  margin: 0;
+}
+hr#dotted {
+  border-top: 2px dotted var(--opaque-color);
+}
+
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
