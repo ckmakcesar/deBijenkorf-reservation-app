@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
+const moment = require('moment');
 
 const { sequelize } = require('.');
 
@@ -7,7 +8,16 @@ const Reservation = sequelize.define('reservation', {
   name: { type: DataTypes.STRING, allowNull: false },
   storeId: { type: DataTypes.INTEGER, allowNull: false },
   statusId: { type: DataTypes.INTEGER, allowNull: false },
-  date: { type: DataTypes.DATEONLY, allowNull: false },
+  date: {
+    type: DataTypes.DATEONLY,
+    allowNull: false,
+    // get() {
+    //   // console.log('>>>>>',Object.keys(moment(this.getDataValue('date'))
+    //   // .utcOffset(this.getDataValue('offset'))))
+    //   return moment(this.getDataValue('date'))
+    //     .utcOffset(this.getDataValue('offset'));
+    // },
+  },
   createdAt: { type: DataTypes.DATE, allowNull: false, defaultValue: Sequelize.NOW },
 }, {
   freezeTableName: true,

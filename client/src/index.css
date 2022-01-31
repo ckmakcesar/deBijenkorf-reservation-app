@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
 
 @import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 
@@ -15,14 +14,10 @@ body {
 
 :root {
   /* Colors */
-  /* --primary-color: purple;
-  --hover-color: red;
-  --disabled-color: blue;
-  --disabled-font-color: green; */
   --primary-color: black;
-  --hover-color: #EFEFEF;
-  --disabled-color: #EEEEEE;
-  --disabled-font-color: #BBBBBB;
+  --hover-color: #efefef;
+  --disabled-color: #eeeeee;
+  --disabled-font-color: #bbbbbb;
   --opaque-color: rgba(0, 0, 0, 0.2);
   --lighter-gray-color: rgba(0, 0, 0, 0.5);
 }
@@ -36,22 +31,27 @@ body {
 .input-field-label {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
-  font-size: 14px !important;
-  font-weight: 600;
+  padding: 12px 0;
+  font-size: 16px !important;
+  font-weight: 500;
 }
 .input-field-label > div:first-child {
   margin-bottom: 8px;
+  font-size: 18px;
 }
 
-select{
+select {
   border: 1px solid #767676;
   border-radius: 4px;
+  font-size: 16px;
+  padding: 4px 2px;
 }
 input {
   border: 1px solid #767676;
   border-radius: 4px;
-  text-indent: 2px;
+  text-indent: 4px;
+  font-size: 16px;
+  padding: 4px 2px;
 }
 input[type="radio"] {
   margin: auto 4px !important;
@@ -88,3 +88,31 @@ hr#dotted {
 .green {
   color: green;
 }
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .flex-content {
+    padding: 4px 12px;
+  }
+  .input-field-label {
+    padding: 14px 0;
+    font-size: 12px !important;
+  }
+  .input-field-label > div:first-child {
+    font-size: 16px;
+  }  
+  select {
+    font-size: 14px;
+    padding: 4px 2px;
+  }
+  input {
+    font-size: 14px;
+    padding: 4px 2px;
+  }  
+}
+/* 
+.cut-text {
+  text-overflow: ellipsis;
+  overflow     : hidden;
+  white-space  : nowrap;
+} */

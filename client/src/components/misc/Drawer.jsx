@@ -75,6 +75,7 @@ const Drawer = ({
             {
               formId,
               onSubmit: handleSubmit,
+              onClose,
             }
           )}
         </div>

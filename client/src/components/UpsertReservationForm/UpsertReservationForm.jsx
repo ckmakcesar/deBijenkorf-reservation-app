@@ -12,12 +12,14 @@ import { isFromTodayOn, cleanObject, formatDate } from '../../utils/utils';
 
 import styles from '../../styles/UpsertReservationForm.module.css';
 
+// Create a new reservation, or Update an existing reservation
 const UpsertReservationForm = ({
   storesMap,
   statusesMap,
   formId,
   onSubmit,
-  // below prop is for editing an existing entry; if not supplied, the user is creating an entry
+  onClose,
+  // below prop is for UPDATING an existing entry; if not supplied, the user is creating an entry
   reservation: existingReservation,
 }) => {
   const [name, setName] = useState(existingReservation?.name || '');
@@ -46,8 +48,24 @@ const UpsertReservationForm = ({
           statusId: selectedStatus?.id,
           date: formatDate(date),
         };
-        onSubmit(cleanObject(reservationToUpsert)); // wipe out undefined / empty props
-        e.preventDefault();
+
+        // if it is in UPDATE mode but no change is made, no action should be dispatched
+        let allKeysUnchanged;
+        if (existingReservation
+          && existingReservation.name == name
+          && existingReservation.storeId === selectedStore?.id
+          && existingReservation.statusId === selectedStatus?.id
+          && formatDate(existingReservation.date) === formatDate(date)
+        ) {
+          allKeysUnchanged = true;
+        }
+
+        if (!allKeysUnchanged) {
+          onSubmit(cleanObject(reservationToUpsert)); // wipe out undefined / empty props
+          e.preventDefault();
+        } else {
+          onClose();
+        }
       }
     } else {
       throw new Error('Store/Status not exist - please refresh page and retry.');
@@ -109,6 +127,7 @@ UpsertReservationForm.propTypes = {
   statusesMap: PropTypes.objectOf(PropTypes.exact(Status)).isRequired,
   formId: PropTypes.string,
   onSubmit: PropTypes.func,
+  onClose: PropTypes.func,
   reservation: PropTypes.exact(Reservation),
 };
 

@@ -50,7 +50,7 @@ const Dialog = ({
         className={clsx(styles.dialogBody, isOpen && styles.openedDialog)}
         onClick={(e) => e.stopPropagation()} // pressing on dialog body should not close the dialog
       >
-        <Header text={headerTitle} />
+        <Header text={headerTitle} smaller />
 
         {/* drawer content -> flex & overflow scrol */}
         <div className='flex-content'>
@@ -70,7 +70,7 @@ const Dialog = ({
               className='flex-grow'
               onClick={() => { onClose() }}
               text='Cancel'
-              secondary
+              tone='secondary'
             />
           </div>
         </Footer>
