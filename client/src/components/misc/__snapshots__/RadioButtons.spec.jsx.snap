@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:RadioButtons Should render RadioButtons with every optional props absent 1`] = `
+<div
+  className="input-field-label"
+>
+  <div />
+  <div
+    className="radioButtonWithLabel"
+    key="0"
+  >
+    <input
+      checked={false}
+      disabled={false}
+      name=""
+      onChange={[Function]}
+      required={false}
+      type="radio"
+      value="Hola"
+    />
+    <label
+      htmlFor="Hola"
+      onClick={[Function]}
+    >
+      Hola
+    </label>
+  </div>
+  <div
+    className="radioButtonWithLabel paddingTop"
+    key="1"
+  >
+    <input
+      checked={false}
+      disabled={false}
+      name=""
+      onChange={[Function]}
+      required={false}
+      type="radio"
+      value="Hello"
+    />
+    <label
+      htmlFor="Hello"
+      onClick={[Function]}
+    >
+      Hello
+    </label>
+  </div>
+  <div
+    className="radioButtonWithLabel paddingTop"
+    key="2"
+  >
+    <input
+      checked={false}
+      disabled={false}
+      name=""
+      onChange={[Function]}
+      required={false}
+      type="radio"
+      value="Bonjour"
+    />
+    <label
+      htmlFor="Bonjour"
+      onClick={[Function]}
+    >
+      Bonjour
+    </label>
+  </div>
+</div>
+`;
+
+exports[`component:RadioButtons Should render RadioButtons with every optional props present 1`] = `
+<div
+  className="input-field-label"
+>
+  <div>
+    Group of Radio Buttons*
+  </div>
+  <div
+    className="radioButtonWithLabel"
+    key="0"
+  >
+    <input
+      checked={false}
+      disabled={false}
+      name="greetings-choices"
+      onChange={[Function]}
+      required={true}
+      type="radio"
+      value="Hola"
+    />
+    <label
+      htmlFor="Hola"
+      onClick={[Function]}
+    >
+      Hola
+    </label>
+  </div>
+  <div
+    className="radioButtonWithLabel paddingTop"
+    key="1"
+  >
+    <input
+      checked={true}
+      disabled={false}
+      name="greetings-choices"
+      onChange={[Function]}
+      required={true}
+      type="radio"
+      value="Hello"
+    />
+    <label
+      htmlFor="Hello"
+      onClick={[Function]}
+    >
+      Hello
+    </label>
+  </div>
+  <div
+    className="radioButtonWithLabel paddingTop"
+    key="2"
+  >
+    <input
+      checked={false}
+      disabled={false}
+      name="greetings-choices"
+      onChange={[Function]}
+      required={true}
+      type="radio"
+      value="Bonjour"
+    />
+    <label
+      htmlFor="Bonjour"
+      onClick={[Function]}
+    >
+      Bonjour
+    </label>
+  </div>
+</div>
+`;

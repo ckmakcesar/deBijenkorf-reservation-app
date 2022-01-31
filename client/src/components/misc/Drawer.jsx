@@ -108,7 +108,7 @@ const Drawer = ({
 Drawer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   headerTitle: PropTypes.string.isRequired,
-  formId: PropTypes.string.isRequired,
+  formId: PropTypes.string,
   confirmButtonText: PropTypes.string,
   confirmButtonTone: PropTypes.string,
   onClose: PropTypes.func.isRequired,
@@ -117,6 +117,7 @@ Drawer.propTypes = {
 };
 
 Drawer.defaultProps = {
+  formId: '',
   confirmButtonText: 'Confirm',
   confirmButtonTone: '',
 };

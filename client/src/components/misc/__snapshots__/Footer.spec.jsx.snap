@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Footer Should render Footer with every optional props absent 1`] = `
+<div
+  className="footerRoot"
+>
+  <hr />
+  <div
+    className="footerWrapper"
+  >
+    <h5>
+      hello world
+    </h5>
+  </div>
+</div>
+`;
+
+exports[`component:Footer Should render Footer with every optional props present 1`] = `
+<div
+  className="footerRoot"
+>
+  <hr />
+  <div
+    className="footerWrapper footerReducedPadding"
+  >
+    <h5>
+      hello world
+    </h5>
+  </div>
+</div>
+`;

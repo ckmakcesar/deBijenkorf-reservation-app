@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:InputField Should render InputField with every optional props absent 1`] = `
+<label
+  className="input-field-label"
+>
+  <div />
+  <input
+    disabled={false}
+    onChange={[Function]}
+    required={false}
+    value=""
+  />
+</label>
+`;
+
+exports[`component:InputField Should render InputField with every optional props present 1`] = `
+<label
+  className="input-field-label"
+>
+  <div>
+    Number Input*
+  </div>
+  <input
+    disabled={false}
+    max={9999}
+    min={100}
+    name="number-input"
+    onChange={[Function]}
+    required={true}
+    type="number"
+    value="555"
+  />
+</label>
+`;

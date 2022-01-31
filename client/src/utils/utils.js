@@ -12,11 +12,12 @@ export const removeObjProps = (obj, props) => {
   return newObj;
 };
 
-export const isEmptyObj = (obj) => obj && Object.keys(obj).length === 0 && obj.constructor === Object;
+// check if the argument is an empty object or not
+export const isEmptyObj = (obj) => !!obj && Object.keys(obj).length === 0 && obj.constructor === Object;
 
 export const isFromTodayOn = (time) => (new Date(time).setHours(0, 0, 0, 0) >= new Date().setHours(0, 0, 0, 0));
 
-// directly remove props from the original obj
+// directly remove props from the original obj that are NOT empty string / null / undefined
 export const cleanObject = (obj) => {
   Object.keys(obj).forEach(key => (
     obj[key] === undefined || obj[key] === '' || obj[key] === null

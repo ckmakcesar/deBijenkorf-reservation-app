@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Header Should render Header with every optional props absent 1`] = `
+<div
+  className="headerContainer"
+>
+  <div
+    className="headerText"
+  >
+    This is the very top of the page
+  </div>
+</div>
+`;
+
+exports[`component:Header Should render Header with every optional props present 1`] = `
+<div
+  className="headerContainer"
+>
+  <div
+    className="headerText reducedHeaderText"
+  >
+    This is the very top of the page
+  </div>
+</div>
+`;

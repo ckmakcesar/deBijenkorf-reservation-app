@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Drawer Should render Drawer with every optional props absent 1`] = `
+<div
+  className="drawerContainer"
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="drawer openedDrawer"
+  >
+    <Header
+      smaller={false}
+      text="Top of Page"
+    />
+    <div
+      className="flex-content"
+    >
+      <h5
+        formId=""
+        onClose={[MockFunction]}
+        onSubmit={[Function]}
+      >
+        hello world
+      </h5>
+    </div>
+    <Footer
+      reducedPadding={false}
+    >
+      <div
+        className="drawerButtons"
+      >
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Cancel"
+          tone="secondary"
+        />
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          isSubmit={false}
+          onClick={[MockFunction]}
+          text="Confirm"
+          tone=""
+        />
+      </div>
+    </Footer>
+  </div>
+</div>
+`;
+
+exports[`component:Drawer Should render Drawer with every optional props present 1`] = `
+<div
+  className="drawerContainer"
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="drawer openedDrawer"
+  >
+    <Header
+      smaller={false}
+      text="Top of Page"
+    />
+    <div
+      className="flex-content"
+    >
+      <h5
+        formId="form-002"
+        onClose={[MockFunction]}
+        onSubmit={[Function]}
+      >
+        hello world
+      </h5>
+    </div>
+    <Footer
+      reducedPadding={false}
+    >
+      <div
+        className="drawerButtons"
+      >
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Cancel"
+          tone="secondary"
+        />
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId="form-002"
+          isSubmit={true}
+          onClick={[Function]}
+          text="Vamos Amigo"
+          tone="green"
+        />
+      </div>
+    </Footer>
+  </div>
+</div>
+`;

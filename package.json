@@ -10,10 +10,10 @@
     "lint-client": "cd client && yarn lint",
     "lint-server": "cd server && yarn lint",
     "lint": "yarn lint-client && yarn lint-server",
-    "test": "yarn test-server && yarn test-client",
-    "test-server": "cd server && yarn test",
     "test-client": "cd client && yarn test",
-    "coverage": "(cd server; yarn coverage) && (cd client; yarn coverage)",
+    "test": "yarn test-client",
+    "coverage-client": "cd client && yarn coverage",
+    "coverage": "arn coverage-client",
     "prepare": "husky install"
   },
   "devDependencies": {

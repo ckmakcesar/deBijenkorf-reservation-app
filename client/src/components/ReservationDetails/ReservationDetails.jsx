@@ -71,15 +71,10 @@ const ReservationDetails = ({
 // *********************************************************************************************************************
 ReservationDetails.propTypes = {
   reservation: PropTypes.exact(Reservation).isRequired,
-  store: PropTypes.exact(Store),
-  status: PropTypes.exact(Status),
+  store: PropTypes.exact(Store).isRequired,
+  status: PropTypes.exact(Status).isRequired,
   setReservationToDelete: PropTypes.func.isRequired,
   setDrawerReservationId: PropTypes.func.isRequired,
-};
-
-ReservationDetails.defaultProps = {
-  store: {},
-  status: {},
 };
 
 export default ReservationDetails;

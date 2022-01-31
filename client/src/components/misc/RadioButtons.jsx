@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import styles from '../../styles/misc/RadioButtons.module.css';
 
 const RadioButtons = ({
+  label,
   values,
   onChange,
-  label,
   name,
   value: selectedValue,
   required,
@@ -27,10 +27,15 @@ const RadioButtons = ({
           name={name}
           checked={selectedValue === val}
           onChange={e => { onChange(e.target.value); }}
-          id={val}
+          required={required}
           disabled={disabled}
         />
-        <label htmlFor={val}>{val}</label>
+        <label
+          htmlFor={val}
+          onClick={() => { onChange(val); }}
+        >
+          {val}
+        </label>
       </div>
     ))}
   </div>
@@ -40,9 +45,9 @@ const RadioButtons = ({
 // PROPS
 // *********************************************************************************************************************
 RadioButtons.propTypes = {
+  label: PropTypes.string,
   values: PropTypes.arrayOf(PropTypes.string).isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   required: PropTypes.bool,

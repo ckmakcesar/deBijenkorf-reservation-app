@@ -35,7 +35,7 @@ const ReservationsList = ({
               setReservationToDelete={setReservationToDelete}
               setDrawerReservationId={setDrawerReservationId}
             />
-            <hr id='dotted' />
+            <hr className='dotted' />
           </div>
         ))
       }

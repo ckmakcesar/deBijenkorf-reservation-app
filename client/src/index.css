@@ -75,7 +75,7 @@ hr {
   border-right: 0;
   margin: 0;
 }
-hr#dotted {
+hr.dotted {
   border-top: 2px dotted var(--opaque-color);
 }
 

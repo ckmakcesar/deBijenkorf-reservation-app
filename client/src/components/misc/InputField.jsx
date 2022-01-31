@@ -41,24 +41,12 @@ const InputField = ({
   );
 };
 
-InputField.defaultProps = {
-  onChange: () => { },
-  label: '',
-  name: '',
-  value: '',
-  type: '',
-  min: NaN,
-  max: NaN,
-  required: false,
-  disabled: false,
-};
-
 // *********************************************************************************************************************
 // PROPS
 // *********************************************************************************************************************
 InputField.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   value: PropTypes.string,
   type: PropTypes.string,
   min: PropTypes.number,
@@ -69,14 +57,14 @@ InputField.propTypes = {
 };
 
 InputField.defaultProps = {
-  // label: PropTypes.string,
-  // name: PropTypes.string.isRequired,
-  // value: PropTypes.string,
-  // type: PropTypes.string,
-  // min: PropTypes.number,
-  // max: PropTypes.number,
-  required: PropTypes.false,
-  disabled: false
+  label: '',
+  name: '',
+  value: '',
+  type: '',
+  min: NaN,
+  max: NaN,
+  required: false,
+  disabled: false,
 };
 
 export default InputField;
