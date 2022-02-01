@@ -1,0 +1,29 @@
+version: '3'
+services:   
+  reservations-app:
+    container_name: reservations-app
+    image: cesarmak/reservations-app
+    ports:
+      - "8081:8081"
+    networks:
+      - tracker
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+
+  reservations-db:
+    container_name: reservations-db
+    image: postgres
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "15432:5432"
+    volumes:
+      - ${PWD}/db/sql:/sql/
+    networks:
+      - tracker
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+
+networks:
+  tracker:
+    driver: bridge

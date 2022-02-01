@@ -48,7 +48,7 @@
   color: var(--disabled-font-color) !important;
 }
 .disabledBorder {
-  border-color: var(--disabled-font-color) !important;
+  border-color: transparent !important;
 }
 
 /* Alternative Styles */
