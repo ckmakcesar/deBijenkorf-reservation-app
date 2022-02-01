@@ -11,12 +11,6 @@ const Reservation = sequelize.define('reservation', {
   date: {
     type: DataTypes.DATEONLY,
     allowNull: false,
-    // get() {
-    //   // console.log('>>>>>',Object.keys(moment(this.getDataValue('date'))
-    //   // .utcOffset(this.getDataValue('offset'))))
-    //   return moment(this.getDataValue('date'))
-    //     .utcOffset(this.getDataValue('offset'));
-    // },
   },
   createdAt: { type: DataTypes.DATE, allowNull: false, defaultValue: Sequelize.NOW },
 }, {

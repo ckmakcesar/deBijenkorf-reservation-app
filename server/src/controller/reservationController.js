@@ -1,15 +1,13 @@
-const express = require('express');
+const expressRouter = require('express-promise-router');
 const { param, body } = require('express-validator');
 
 const Reservation = require('../models/Reservation');
-const Store = require('../models/Store');
-const Status = require('../models/Status');
 const { isValidRequest } = require('../utils/utils');
 
-const reservationController = express.Router();
+const reservationController = expressRouter();
 
 reservationController.post(
-  '/',
+  '/reservations',
   [
     body('name').isString(),
     body('storeId').isInt(),
@@ -20,6 +18,7 @@ reservationController.post(
     if (!isValidRequest(req, res)) return; // when req is NOT valid, res.sent with error and exit
 
     try {
+      // Note: intentionally allow 'id' to be injected (as in req.body) - for testing purpose in this POC application
       const newReservation = req.body;
       const createdReservation = await Reservation.create(newReservation);
       res.status(201).json(createdReservation);
@@ -33,18 +32,17 @@ reservationController.post(
 );
 
 reservationController.get(
-  '/',
+  '/reservations',
   async (_, res) => {
     const reservations = await Reservation.findAll({
       order: [['date', 'ASC']], // default: order by date, in ascending order
     });
-    // console.log(reservations)
     res.status(200).json(reservations);
   },
 );
 
 reservationController.put(
-  '/:reservationId',
+  '/reservations/:reservationId',
   [
     param('reservationId').toInt(),
     body('name').optional().isString(),
@@ -82,7 +80,7 @@ reservationController.put(
 
 // delete ONE
 reservationController.delete(
-  '/:reservationId',
+  '/reservations/:reservationId',
   [
     param('reservationId').isInt(),
   ],
@@ -100,26 +98,10 @@ reservationController.delete(
 
 // delete ALL
 reservationController.delete(
-  '/',
+  '/reservations',
   async (_, res) => {
     await Reservation.sync({ force: true });
     res.status(204).end();
-  },
-);
-
-reservationController.get(
-  '/stores',
-  async (_, res) => {
-    const stores = await Store.findAll();
-    res.status(200).json(stores);
-  },
-);
-
-reservationController.get(
-  '/statuses',
-  async (_, res) => {
-    const statuses = await Status.findAll();
-    res.status(200).json(statuses);
   },
 );
 

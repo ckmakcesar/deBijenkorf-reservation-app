@@ -7,7 +7,9 @@
     "watch": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
     "lint": "eslint \"**/*.js\"",
-    "fixlint": "eslint --fix \"**/*.js\""
+    "fixlint": "eslint --fix \"**/*.js\"",
+    "test": "jest --all",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -22,9 +24,13 @@
     "winston": "^3.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^8.7.0",
     "eslint-plugin-react": "^7.28.0",
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "superagent": "^7.1.1",
+    "supertest": "^6.2.2"
   }
 }
