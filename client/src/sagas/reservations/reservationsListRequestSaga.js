@@ -14,6 +14,8 @@ import {
 import { isEmptyObj } from '../../utils/utils';
 import { addActionSuccessToast, addActionFailureToast } from '../../utils/toasts';
 
+import { TOAST_LEVELS } from '../../constants/misc';
+
 function* reservationsListRequestWorker({ type }) {
   try {
     const storesMap = yield select(reservationStoresMapSelector);
@@ -30,7 +32,9 @@ function* reservationsListRequestWorker({ type }) {
 
     const reservations = yield reservationService.getAll();
     yield put(reservationsListRequestSuccess(reservations)); // changes state.reservations.loading back to false
-    addActionSuccessToast(type);
+    if (reservations.length) {
+      addActionSuccessToast(type, TOAST_LEVELS.INFO);
+    }
   } catch (error) {
     yield put(reservationsListRequestFailure(error));
     addActionFailureToast(type);

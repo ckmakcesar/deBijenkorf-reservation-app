@@ -1,7 +1,7 @@
 const ActionType = require('../types/actionType').default;
 
 const toastMessages = {
-  // [ActionType.RESERVATIONS_LIST_REQUEST_SUCCESS]: 'TESTING', // !!!
+  [ActionType.RESERVATIONS_LIST_REQUEST_SUCCESS]: 'Click a reservation to edit',
   [ActionType.RESERVATIONS_LIST_REQUEST_FAILURE]: 'Failed to list reservations',
 
   [ActionType.RESERVATION_CREATE_REQUEST_SUCCESS]: 'Reservation created',

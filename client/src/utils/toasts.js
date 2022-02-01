@@ -12,6 +12,7 @@ export const addToast = (text, level) => toast[level || TOAST_LEVELS.INFO](text,
   draggable: true
 });
 
-export const addActionSuccessToast = (type) => addToast(toastMessages[`${type}_SUCCESS`], TOAST_LEVELS.SUCCESS);
+export const addActionSuccessToast = (type, overrideLevel) => addToast(toastMessages[`${type}_SUCCESS`],
+  overrideLevel || TOAST_LEVELS.SUCCESS);
 
 export const addActionFailureToast = (type) => addToast(toastMessages[`${type}_FAILURE`], TOAST_LEVELS.ERROR);
