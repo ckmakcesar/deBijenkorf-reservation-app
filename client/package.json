@@ -9,7 +9,9 @@
     "lint": "eslint \"**/*.{js,jsx}\"",
     "fixlint": "eslint --fix \"**/*.{js,jsx}\"",
     "test": "jest --all",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "cy:run": "cypress run --browser chrome -- --record --spec \"cypress/integration/interactWithReservationsPage.spec.js\"",
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "dependencies": {
@@ -37,9 +39,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^6.5.1",
+    "cypress": "^9.3.1",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^8.7.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.28.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",

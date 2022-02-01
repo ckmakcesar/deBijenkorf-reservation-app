@@ -11,6 +11,7 @@ const InputField = ({
   onChange,
   required,
   disabled,
+  id,
 }) => {
   const optionalProps = {};
   if (name) {
@@ -31,6 +32,7 @@ const InputField = ({
       <div>{label ? `${label}${label && required ? '*' : ''}` : undefined}</div>
 
       <input
+        {...(id ? { id: `Input-${id}` } : null)} // optional id - should be unique
         value={value}
         onChange={e => onChange(e.target.value)}
         required={required}
@@ -54,6 +56,7 @@ InputField.propTypes = {
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 InputField.defaultProps = {
@@ -65,6 +68,7 @@ InputField.defaultProps = {
   max: NaN,
   required: false,
   disabled: false,
+  id: '',
 };
 
 export default InputField;

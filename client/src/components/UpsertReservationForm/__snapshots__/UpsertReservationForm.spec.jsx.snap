@@ -8,6 +8,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
 >
   <InputField
     disabled={false}
+    id="name"
     label="Name"
     max={NaN}
     min={NaN}
@@ -19,6 +20,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <Select
     disabled={false}
+    id="store"
     label="Store"
     name="status"
     onChange={[Function]}
@@ -57,6 +59,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <RadioButtons
     disabled={false}
+    id="status"
     label="Status"
     name="status"
     onChange={[Function]}
@@ -73,6 +76,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <DatePicker
     dateFormat="yyyy-MM-dd"
+    divId="date"
     filterDate={[Function]}
     label="Date"
     onChange={[Function]}
@@ -90,6 +94,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
 >
   <InputField
     disabled={false}
+    id="name"
     label="Name"
     max={NaN}
     min={NaN}
@@ -101,6 +106,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <Select
     disabled={false}
+    id="store"
     label="Store"
     name="status"
     onChange={[Function]}
@@ -139,6 +145,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <RadioButtons
     disabled={false}
+    id="status"
     label="Status"
     name="status"
     onChange={[Function]}
@@ -155,6 +162,7 @@ exports[`component:UpsertReservationForm Should render UpsertReservationForm in 
   />
   <DatePicker
     dateFormat="yyyy-MM-dd"
+    divId="date"
     filterDate={[Function]}
     label="Date"
     onChange={[Function]}

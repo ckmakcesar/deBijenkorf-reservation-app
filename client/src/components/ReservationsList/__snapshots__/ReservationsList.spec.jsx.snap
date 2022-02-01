@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component:ReservationsList Should render ReservationsList with every optional props present 1`] = `
-<Fragment>
+<div
+  id="Reservations-list"
+>
   <div
+    id="Reservation-details-1"
     key="1"
   >
     <ReservationDetails
@@ -38,6 +41,7 @@ exports[`component:ReservationsList Should render ReservationsList with every op
     />
   </div>
   <div
+    id="Reservation-details-2"
     key="2"
   >
     <ReservationDetails
@@ -73,6 +77,7 @@ exports[`component:ReservationsList Should render ReservationsList with every op
     />
   </div>
   <div
+    id="Reservation-details-3"
     key="3"
   >
     <ReservationDetails
@@ -107,5 +112,5 @@ exports[`component:ReservationsList Should render ReservationsList with every op
       className="dotted"
     />
   </div>
-</Fragment>
+</div>
 `;

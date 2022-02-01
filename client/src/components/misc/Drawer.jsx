@@ -17,6 +17,7 @@ const Drawer = ({
   confirmButtonTone,
   onClose,
   onConfirm,
+  id,
   children,
 }) => {
   const bodyRef = useRef(document.querySelector('body'));
@@ -60,13 +61,17 @@ const Drawer = ({
 
   return (
     <div
+      {...(id ? { id: `Drawer-${id}` } : null)} // optional id - should be unique
       className={styles.drawerContainer}
       ref={focusDiv}
       tabIndex={0}
       onKeyDown={handleKeyDown}
     >
       <div className={clsx(styles.drawer, isOpen && styles.openedDrawer)}>
-        <Header text={headerTitle} />
+        <Header
+          {...(id ? { id: `${id}-drawer` } : null)} // optional id - should be unique
+          text={headerTitle}
+        />
 
         {/* drawer content -> flex & overflow scrol */}
         <div className='flex-content'>
@@ -80,9 +85,12 @@ const Drawer = ({
           )}
         </div>
 
-        <Footer>
+        <Footer
+          {...(id ? { id: `${id}-drawer` } : null)} // optional id - should be unique
+        >
           <div className={styles.drawerButtons}>
             <Button
+              {...(id ? { id: `${id}-dialog-cancel` } : null)} // optional id - should be unique
               className='flex-grow'
               onClick={() => { onClose() }}
               text='Cancel'
@@ -90,6 +98,7 @@ const Drawer = ({
             />
 
             <Button
+              {...(id ? { id: `${id}-drawer-confirm` } : null)} // optional id - should be unique
               className='flex-grow'
               text={confirmButtonText}
               tone={confirmButtonTone}
@@ -114,12 +123,14 @@ Drawer.propTypes = {
   onClose: PropTypes.func.isRequired,
   onConfirm: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  id: PropTypes.string,
 };
 
 Drawer.defaultProps = {
   formId: '',
   confirmButtonText: 'Confirm',
   confirmButtonTone: '',
+  id: '',
 };
 
 export default Drawer;

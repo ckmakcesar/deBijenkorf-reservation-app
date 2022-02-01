@@ -1,6 +1,6 @@
 const ActionType = require('../types/actionType').default;
 
-module.exports = {
+const toastMessages = {
   // [ActionType.RESERVATIONS_LIST_REQUEST_SUCCESS]: 'TESTING', // !!!
   [ActionType.RESERVATIONS_LIST_REQUEST_FAILURE]: 'Failed to list reservations',
 
@@ -12,4 +12,9 @@ module.exports = {
 
   [ActionType.RESERVATION_DELETE_REQUEST_SUCCESS]: 'Reservation deleted',
   [ActionType.RESERVATION_DELETE_REQUEST_FAILURE]: 'Failed to delete reservation',
+
+  [ActionType.RESERVATION_DELETE_ALL_REQUESTS_SUCCESS]: 'All reservations deleted',
+  [ActionType.RESERVATION_DELETE_ALL_REQUESTS_FAILURE]: 'Failed to delete all reservations',
 };
+
+module.exports = toastMessages;

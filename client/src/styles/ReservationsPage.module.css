@@ -3,10 +3,10 @@
   flex-direction: column;
   height: 100%;
 }
-.createReservationButton {
+.reservartionsPageFooter {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .dialogContent {
   padding-bottom: 8px;

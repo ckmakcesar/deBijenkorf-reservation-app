@@ -35,6 +35,7 @@ exports[`component:ReservationDetails Should render ReservationDetails with ever
       boxIconClassName="bx-trash"
       disabled={false}
       formId=""
+      id=""
       isSubmit={false}
       onClick={[Function]}
       text="Delete"

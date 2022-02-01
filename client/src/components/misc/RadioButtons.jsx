@@ -12,6 +12,7 @@ const RadioButtons = ({
   value: selectedValue,
   required,
   disabled,
+  id,
 }) => (
   <div className='input-field-label'>
     <div>{label ? `${label}${label && required ? '*' : ''}` : undefined}</div>
@@ -22,6 +23,7 @@ const RadioButtons = ({
         className={clsx(styles.radioButtonWithLabel, index > 0 && styles.paddingTop)}
       >
         <input
+          {...(id ? { id: `Radio-button-${id}-${val}` } : null)} // optional id - should be unique
           type='radio'
           value={val}
           name={name}
@@ -52,6 +54,7 @@ RadioButtons.propTypes = {
   value: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 RadioButtons.defaultProps = {
@@ -60,6 +63,7 @@ RadioButtons.defaultProps = {
   value: '',
   required: false,
   disabled: false,
+  id: '',
 };
 
 export default RadioButtons;

@@ -6,6 +6,7 @@ exports[`component:Select Should render Select with every optional props absent 
 >
   <div />
   <select
+    className="select"
     disabled={false}
     name=""
     onChange={[Function]}
@@ -39,6 +40,7 @@ exports[`component:Select Should render Select with every optional props present
     Select a Language*
   </div>
   <select
+    className="select"
     disabled={false}
     name="language-options"
     onChange={[Function]}

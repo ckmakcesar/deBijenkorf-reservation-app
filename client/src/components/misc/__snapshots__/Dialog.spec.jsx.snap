@@ -12,6 +12,7 @@ exports[`component:Dialog Should render Dialog with every optional props absent 
     onClick={[Function]}
   >
     <Header
+      id=""
       smaller={true}
       text="Top of Page"
     />
@@ -23,6 +24,7 @@ exports[`component:Dialog Should render Dialog with every optional props absent 
       </h5>
     </div>
     <Footer
+      id=""
       reducedPadding={true}
     >
       <div
@@ -33,6 +35,7 @@ exports[`component:Dialog Should render Dialog with every optional props absent 
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Confirm"
@@ -43,6 +46,7 @@ exports[`component:Dialog Should render Dialog with every optional props absent 
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Cancel"
@@ -66,6 +70,7 @@ exports[`component:Dialog Should render Dialog with every optional props present
     onClick={[Function]}
   >
     <Header
+      id=""
       smaller={true}
       text="Top of Page"
     />
@@ -77,6 +82,7 @@ exports[`component:Dialog Should render Dialog with every optional props present
       </h5>
     </div>
     <Footer
+      id=""
       reducedPadding={true}
     >
       <div
@@ -87,6 +93,7 @@ exports[`component:Dialog Should render Dialog with every optional props present
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Vamos Amigo"
@@ -97,6 +104,7 @@ exports[`component:Dialog Should render Dialog with every optional props present
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Cancel"

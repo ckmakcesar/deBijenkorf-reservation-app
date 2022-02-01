@@ -12,7 +12,9 @@ const update = (reservation) => httpClient.put(`${RESERVATIONS_PATH}/${reservati
   reservation
 );
 
-const del = (reservationId) => httpClient.delete(`${RESERVATIONS_PATH}/${reservationId}`);
+const deleteOne = (reservationId) => httpClient.delete(`${RESERVATIONS_PATH}/${reservationId}`);
+
+const deleteAll = () => httpClient.delete(RESERVATIONS_PATH);
 
 const getStores = () => httpClient.get(`${RESERVATIONS_PATH}/stores`);
 
@@ -22,7 +24,8 @@ export default {
   getAll,
   create,
   update,
-  del,
+  deleteOne,
+  deleteAll,
   getStores,
   getStatuses,
 };

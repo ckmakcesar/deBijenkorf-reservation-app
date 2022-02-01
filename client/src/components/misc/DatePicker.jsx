@@ -12,11 +12,15 @@ const DatePicker = forwardRef(({
   selected,
   onChange,
   filterDate,
+  divId,
 }, ref) => (
   <label className='input-field-label'>
     <div>{label ? `${label}${label && required ? '*' : ''}` : undefined}</div>
-    
-    <div className='customDatePickerWidth'>
+
+    <div
+      {...(divId ? { id: `DatePickerDiv-${divId}` } : null)} // optional id - should be unique
+      className='customDatePickerWidth'
+    >
       <StandardDatePicker
         ref={ref}
         dateFormat={dateFormat}
@@ -38,6 +42,7 @@ DatePicker.propTypes = {
   selected: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   filterDate: PropTypes.func,
+  divId: PropTypes.string,
 };
 
 DatePicker.defaultProps = {
@@ -45,6 +50,7 @@ DatePicker.defaultProps = {
   dateFormat: 'dd/MM/yyyy',
   selected: null,
   filterDate: () => { },
+  divId: '',
 };
 
 DatePicker.displayName = 'DatePicker';

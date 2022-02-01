@@ -10,6 +10,7 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
     className="drawer openedDrawer"
   >
     <Header
+      id=""
       smaller={false}
       text="Top of Page"
     />
@@ -25,6 +26,7 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
       </h5>
     </div>
     <Footer
+      id=""
       reducedPadding={false}
     >
       <div
@@ -35,6 +37,7 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Cancel"
@@ -45,6 +48,7 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[MockFunction]}
           text="Confirm"
@@ -66,6 +70,7 @@ exports[`component:Drawer Should render Drawer with every optional props present
     className="drawer openedDrawer"
   >
     <Header
+      id=""
       smaller={false}
       text="Top of Page"
     />
@@ -81,6 +86,7 @@ exports[`component:Drawer Should render Drawer with every optional props present
       </h5>
     </div>
     <Footer
+      id=""
       reducedPadding={false}
     >
       <div
@@ -91,6 +97,7 @@ exports[`component:Drawer Should render Drawer with every optional props present
           className="flex-grow"
           disabled={false}
           formId=""
+          id=""
           isSubmit={false}
           onClick={[Function]}
           text="Cancel"
@@ -101,6 +108,7 @@ exports[`component:Drawer Should render Drawer with every optional props present
           className="flex-grow"
           disabled={false}
           formId="form-002"
+          id=""
           isSubmit={true}
           onClick={[Function]}
           text="Vamos Amigo"
