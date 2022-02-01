@@ -47,6 +47,9 @@
 .disabled {
   color: var(--disabled-font-color) !important;
 }
+.disabledBorder {
+  border-color: var(--disabled-font-color) !important;
+}
 
 /* Alternative Styles */
 .secondary {
@@ -106,5 +109,5 @@
   }
   .buttonReducedLeftPadding {
     padding-right: 2px;
-  }  
+  }
 }

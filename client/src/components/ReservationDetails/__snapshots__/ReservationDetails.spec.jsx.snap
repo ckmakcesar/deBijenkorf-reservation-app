@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:ReservationDetails Should render ReservationDetails with every optional props present 1`] = `
+<div
+  className="reservationDetailsContainer"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="reservationDetailsLeft"
+  >
+    <div
+      className="reservationDetailsName"
+    >
+      Repair
+    </div>
+    <div
+      className="reservationDetailsContext"
+    >
+      2022-01-27
+       · 
+      Centraal
+    </div>
+  </div>
+  <div
+    className="reservationDetailsRight"
+  >
+    <div
+      className="reservationDetailsStatus green"
+    >
+      Ready
+    </div>
+    <Button
+      boxIconClassName="bx-trash"
+      disabled={false}
+      formId=""
+      id=""
+      isSubmit={false}
+      onClick={[Function]}
+      text="Delete"
+      tone="red"
+    />
+  </div>
+</div>
+`;

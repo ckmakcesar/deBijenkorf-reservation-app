@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:ReservationsList Should render ReservationsList with every optional props present 1`] = `
+<div
+  id="Reservations-list"
+>
+  <div
+    id="Reservation-details-1"
+    key="1"
+  >
+    <ReservationDetails
+      reservation={
+        Object {
+          "createdAt": "2022-02-10T23:00:00.000Z",
+          "date": "2022-01-26T23:00:00.000Z",
+          "id": 1,
+          "name": "Repair",
+          "statusId": 3,
+          "storeId": 1,
+        }
+      }
+      setDrawerReservationId={[MockFunction]}
+      setReservationToDelete={[MockFunction]}
+      status={
+        Object {
+          "code": "TODO",
+          "id": 3,
+          "name": "Todo",
+        }
+      }
+      store={
+        Object {
+          "address": "Mid Amsterdam",
+          "id": 1,
+          "name": "Centraal",
+        }
+      }
+    />
+    <hr
+      className="dotted"
+    />
+  </div>
+  <div
+    id="Reservation-details-2"
+    key="2"
+  >
+    <ReservationDetails
+      reservation={
+        Object {
+          "createdAt": "2022-02-20T23:00:00.000Z",
+          "date": "2022-01-26T23:00:00.000Z",
+          "id": 2,
+          "name": "Consultation",
+          "statusId": 3,
+          "storeId": 1,
+        }
+      }
+      setDrawerReservationId={[MockFunction]}
+      setReservationToDelete={[MockFunction]}
+      status={
+        Object {
+          "code": "TODO",
+          "id": 3,
+          "name": "Todo",
+        }
+      }
+      store={
+        Object {
+          "address": "Mid Amsterdam",
+          "id": 1,
+          "name": "Centraal",
+        }
+      }
+    />
+    <hr
+      className="dotted"
+    />
+  </div>
+  <div
+    id="Reservation-details-3"
+    key="3"
+  >
+    <ReservationDetails
+      reservation={
+        Object {
+          "createdAt": "2022-02-28T23:00:00.000Z",
+          "date": "2022-01-26T23:00:00.000Z",
+          "id": 3,
+          "name": "Gift Drop",
+          "statusId": 2,
+          "storeId": 1,
+        }
+      }
+      setDrawerReservationId={[MockFunction]}
+      setReservationToDelete={[MockFunction]}
+      status={
+        Object {
+          "code": "IN_PROGRESS",
+          "id": 2,
+          "name": "In Progress",
+        }
+      }
+      store={
+        Object {
+          "address": "Mid Amsterdam",
+          "id": 1,
+          "name": "Centraal",
+        }
+      }
+    />
+    <hr
+      className="dotted"
+    />
+  </div>
+</div>
+`;

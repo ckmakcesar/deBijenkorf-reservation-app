@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Button Should render Button with every optional props present 1`] = `
+<div
+  className="buttonContainer secondary"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="buttonOuter secondary"
+  >
+    <i
+      className="bx buttonIcon bx-send secondary"
+    />
+    <input
+      className="button buttonReducedLeftPadding secondary"
+      form="form001"
+      type="submit"
+      value="CLICK TO SUBMIT"
+    />
+  </span>
+</div>
+`;
+
+exports[`component:Button Should render Button with every optional props absent 1`] = `
+<div
+  className="buttonContainer"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="buttonOuter"
+  >
+    <input
+      className="button"
+      form=""
+      type="button"
+      value="OK"
+    />
+  </span>
+</div>
+`;

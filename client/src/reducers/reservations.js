@@ -89,6 +89,23 @@ const reservations = (state = initialState, action) => {
         loading: false,
       };
 
+    case ActionType.RESERVATION_DELETE_ALL_REQUESTS:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ActionType.RESERVATION_DELETE_ALL_REQUESTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        reservationsMap: {}
+      };
+    case ActionType.RESERVATION_DELETE_ALL_REQUESTS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+      };
+
     case ActionType.RESERVATION_STORES_LIST_REQUEST_SUCCESS:
       return {
         ...state,

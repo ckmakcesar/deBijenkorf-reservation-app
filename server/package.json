@@ -7,9 +7,7 @@
     "watch": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
     "lint": "eslint \"**/*.js\"",
-    "fixlint": "eslint --fix \"**/*.js\"",
-    "test": "jest --all",
-    "coverage": "jest --coverage"
+    "fixlint": "eslint --fix \"**/*.js\""
   },
   "dependencies": {
     "compression": "^1.7.4",

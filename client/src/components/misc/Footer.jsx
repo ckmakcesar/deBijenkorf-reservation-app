@@ -6,12 +6,16 @@ import styles from '../../styles/misc/Footer.module.css';
 
 const Footer = ({
   reducedPadding,
+  id,
   children,
 }) => (
   <div className={styles.footerRoot}>
     <hr />
 
-    <div className={clsx(styles.footerWrapper, reducedPadding && styles.footerReducedPadding)}>
+    <div
+      {...(id ? { id: `Footer-${id}` } : null)} // optional id - should be unique
+      className={clsx(styles.footerWrapper, reducedPadding && styles.footerReducedPadding)}
+    >
       {children}
     </div>
   </div>
@@ -22,11 +26,13 @@ const Footer = ({
 // *********************************************************************************************************************
 Footer.propTypes = {
   reducedPadding: PropTypes.bool,
+  id: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 Footer.defaultProps = {
   reducedPadding: false,
+  id: '',
 }
 
 export default Footer;

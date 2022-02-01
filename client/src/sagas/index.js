@@ -4,3 +4,4 @@ export { reservationsListRequestSaga } from './reservations/reservationsListRequ
 export { reservationCreateRequestSaga } from './reservations/reservationCreateRequestSaga';
 export { reservationUpdateRequestSaga } from './reservations/reservationUpdateRequestSaga';
 export { reservationDeleteRequestSaga } from './reservations/reservationDeleteRequestSaga';
+export { reservationDeleteAllRequestSaga } from './reservations/reservationDeleteAllRequestSaga';

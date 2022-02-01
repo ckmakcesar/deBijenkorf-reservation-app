@@ -51,6 +51,17 @@ export const reservationDeleteRequestFailure = (error) => ({
   error,
 });
 
+export const reservationDeleteAllRequest = () => ({
+  type: ActionType.RESERVATION_DELETE_ALL_REQUESTS,
+});
+export const reservationDeleteAllRequestSuccess = () => ({
+  type: ActionType.RESERVATION_DELETE_ALL_REQUESTS_SUCCESS,
+});
+export const reservationDeleteAllRequestFailure = (error) => ({
+  type: ActionType.RESERVATION_DELETE_ALL_REQUESTS_FAILURE,
+  error,
+});
+
 export const reservationStoresListRequestSuccess = (reservations) => ({
   type: ActionType.RESERVATION_STORES_LIST_REQUEST_SUCCESS,
   payload: reservations,

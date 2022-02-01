@@ -32,9 +32,15 @@ const UpsertReservationForm = ({
   const storeOptions = Object.values(storesMap);
   const statusNames = Object.values(statusesMap).map((status) => status.name);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const resetStates = () => {
+    setName('');
+    setStoreName('');
+    setStatusName('');
+    setDate(null);
+    ref.current = null;
+  };
 
+  const handleSubmit = (e) => {
     if (!date) {
       ref.current.setOpen(true);
     } else if (name && storeName && statusName) {
@@ -61,9 +67,11 @@ const UpsertReservationForm = ({
         }
 
         if (!allKeysUnchanged) {
+          resetStates();
           onSubmit(cleanObject(reservationToUpsert)); // wipe out undefined / empty props
           e.preventDefault();
         } else {
+          resetStates();
           onClose();
         }
       }
@@ -84,6 +92,7 @@ const UpsertReservationForm = ({
         value={name}
         onChange={setName}
         required
+        id='name'
       />
 
       <Select
@@ -94,6 +103,7 @@ const UpsertReservationForm = ({
         value={storeName}
         prependBlankOption
         required
+        id='store'
       />
 
       <RadioButtons
@@ -104,6 +114,7 @@ const UpsertReservationForm = ({
         value={statusName}
         prependBlankOption
         required
+        id='status'
       />
 
       <DatePicker
@@ -114,6 +125,7 @@ const UpsertReservationForm = ({
         selected={date}
         onChange={(newDate) => setDate(newDate)}
         filterDate={isFromTodayOn}
+        divId='date'
       />
     </form>
   );

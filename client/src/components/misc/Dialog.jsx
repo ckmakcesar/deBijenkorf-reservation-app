@@ -16,6 +16,7 @@ const Dialog = ({
   confirmButtonTone,
   onClose,
   onConfirm,
+  id,
   children,
 }) => {
   if (!isOpen) return null;
@@ -27,11 +28,11 @@ const Dialog = ({
 
   // set focus to the overlay, and quit if ESCAPE is pressed
   const focusDiv = useRef();
-  useEffect(()=>{
+  useEffect(() => {
     if (isOpen && focusDiv.current) {
       focusDiv.current.focus();
     }
-  },[isOpen]);
+  }, [isOpen]);
   const handleKeyDown = (e) => {
     if (isEscKeyDown(e)) {
       onClose();
@@ -40,6 +41,7 @@ const Dialog = ({
 
   return (
     <div
+      {...(id ? { id: `Dialog-${id}` } : null)} // optional id - should be unique
       className={styles.dialogBackground}
       onClick={onClose} // clicking the opaque background will close the dialog
       ref={focusDiv}
@@ -50,16 +52,24 @@ const Dialog = ({
         className={clsx(styles.dialogBody, isOpen && styles.openedDialog)}
         onClick={(e) => e.stopPropagation()} // pressing on dialog body should not close the dialog
       >
-        <Header text={headerTitle} smaller />
+        <Header
+          {...(id ? { id: `${id}-dialog` } : null)} // optional id - should be unique
+          text={headerTitle}
+          smaller
+        />
 
         {/* drawer content -> flex & overflow scrol */}
         <div className='flex-content'>
           {children}
         </div>
 
-        <Footer reducedPadding>
+        <Footer
+          {...(id ? { id: `${id}-dialog` } : null)} // optional id - should be unique
+          reducedPadding
+        >
           <div className={styles.dialogButtons}>
             <Button
+              {...(id ? { id: `${id}-dialog-confirm` } : null)} // optional id - should be unique
               className='flex-grow'
               text={confirmButtonText}
               onClick={handleConfirm}
@@ -67,6 +77,7 @@ const Dialog = ({
             />
 
             <Button
+              {...(id ? { id: `${id}-dialog-cancel` } : null)} // optional id - should be unique
               className='flex-grow'
               onClick={() => { onClose() }}
               text='Cancel'
@@ -91,11 +102,13 @@ Dialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   onConfirm: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  id: PropTypes.string,
 };
 
 Dialog.defaultProps = {
   confirmButtonText: 'Confirm',
   confirmButtonTone: '',
+  id: '',
 };
 
 export default Dialog;

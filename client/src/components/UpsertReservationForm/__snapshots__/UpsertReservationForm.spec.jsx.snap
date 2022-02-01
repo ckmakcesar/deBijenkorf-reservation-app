@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:UpsertReservationForm Should render UpsertReservationForm in the CREATE RESERVATION mode 1`] = `
+<form
+  className="upsertReservationModalForm"
+  id="form-101"
+  onSubmit={[Function]}
+>
+  <InputField
+    disabled={false}
+    id="name"
+    label="Name"
+    max={NaN}
+    min={NaN}
+    name="name"
+    onChange={[Function]}
+    required={true}
+    type=""
+    value=""
+  />
+  <Select
+    disabled={false}
+    id="store"
+    label="Store"
+    name="status"
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "address": "Mid Amsterdam",
+          "id": 1,
+          "name": "Centraal",
+        },
+        Object {
+          "address": "Nord Oost Amsterdam",
+          "id": 2,
+          "name": "Zeeburg",
+        },
+        Object {
+          "address": "Oost Amsterdam",
+          "id": 3,
+          "name": "Diemen",
+        },
+        Object {
+          "address": "Zuid Amsterdam",
+          "id": 4,
+          "name": "Amstelveen",
+        },
+        Object {
+          "address": "West Amsterdam",
+          "id": 5,
+          "name": "Sloten",
+        },
+      ]
+    }
+    prependBlankOption={true}
+    required={true}
+    value=""
+  />
+  <RadioButtons
+    disabled={false}
+    id="status"
+    label="Status"
+    name="status"
+    onChange={[Function]}
+    prependBlankOption={true}
+    required={true}
+    value=""
+    values={
+      Array [
+        "Ready",
+        "In Progress",
+        "Todo",
+      ]
+    }
+  />
+  <DatePicker
+    dateFormat="yyyy-MM-dd"
+    divId="date"
+    filterDate={[Function]}
+    label="Date"
+    onChange={[Function]}
+    required={true}
+    selected={null}
+  />
+</form>
+`;
+
+exports[`component:UpsertReservationForm Should render UpsertReservationForm in the UPDATE RESERVATION mode 1`] = `
+<form
+  className="upsertReservationModalForm"
+  id="form-202"
+  onSubmit={[Function]}
+>
+  <InputField
+    disabled={false}
+    id="name"
+    label="Name"
+    max={NaN}
+    min={NaN}
+    name="name"
+    onChange={[Function]}
+    required={true}
+    type=""
+    value="Repair"
+  />
+  <Select
+    disabled={false}
+    id="store"
+    label="Store"
+    name="status"
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "address": "Mid Amsterdam",
+          "id": 1,
+          "name": "Centraal",
+        },
+        Object {
+          "address": "Nord Oost Amsterdam",
+          "id": 2,
+          "name": "Zeeburg",
+        },
+        Object {
+          "address": "Oost Amsterdam",
+          "id": 3,
+          "name": "Diemen",
+        },
+        Object {
+          "address": "Zuid Amsterdam",
+          "id": 4,
+          "name": "Amstelveen",
+        },
+        Object {
+          "address": "West Amsterdam",
+          "id": 5,
+          "name": "Sloten",
+        },
+      ]
+    }
+    prependBlankOption={true}
+    required={true}
+    value="Centraal"
+  />
+  <RadioButtons
+    disabled={false}
+    id="status"
+    label="Status"
+    name="status"
+    onChange={[Function]}
+    prependBlankOption={true}
+    required={true}
+    value="Todo"
+    values={
+      Array [
+        "Ready",
+        "In Progress",
+        "Todo",
+      ]
+    }
+  />
+  <DatePicker
+    dateFormat="yyyy-MM-dd"
+    divId="date"
+    filterDate={[Function]}
+    label="Date"
+    onChange={[Function]}
+    required={true}
+    selected={2022-01-26T23:00:00.000Z}
+  />
+</form>
+`;

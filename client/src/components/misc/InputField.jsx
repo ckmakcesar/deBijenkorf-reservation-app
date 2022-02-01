@@ -11,6 +11,7 @@ const InputField = ({
   onChange,
   required,
   disabled,
+  id,
 }) => {
   const optionalProps = {};
   if (name) {
@@ -31,6 +32,7 @@ const InputField = ({
       <div>{label ? `${label}${label && required ? '*' : ''}` : undefined}</div>
 
       <input
+        {...(id ? { id: `Input-${id}` } : null)} // optional id - should be unique
         value={value}
         onChange={e => onChange(e.target.value)}
         required={required}
@@ -41,8 +43,23 @@ const InputField = ({
   );
 };
 
+// *********************************************************************************************************************
+// PROPS
+// *********************************************************************************************************************
+InputField.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  type: PropTypes.string,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  id: PropTypes.string,
+};
+
 InputField.defaultProps = {
-  onChange: () => { },
   label: '',
   name: '',
   value: '',
@@ -51,32 +68,7 @@ InputField.defaultProps = {
   max: NaN,
   required: false,
   disabled: false,
-};
-
-// *********************************************************************************************************************
-// PROPS
-// *********************************************************************************************************************
-InputField.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  type: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
-
-InputField.defaultProps = {
-  // label: PropTypes.string,
-  // name: PropTypes.string.isRequired,
-  // value: PropTypes.string,
-  // type: PropTypes.string,
-  // min: PropTypes.number,
-  // max: PropTypes.number,
-  required: PropTypes.false,
-  disabled: false
+  id: '',
 };
 
 export default InputField;

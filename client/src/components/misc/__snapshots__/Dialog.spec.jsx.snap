@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Dialog Should render Dialog with every optional props absent 1`] = `
+<div
+  className="dialogBackground"
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="dialogBody openedDialog"
+    onClick={[Function]}
+  >
+    <Header
+      id=""
+      smaller={true}
+      text="Top of Page"
+    />
+    <div
+      className="flex-content"
+    >
+      <h5>
+        hello world
+      </h5>
+    </div>
+    <Footer
+      id=""
+      reducedPadding={true}
+    >
+      <div
+        className="dialogButtons"
+      >
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          id=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Confirm"
+          tone=""
+        />
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          id=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Cancel"
+          tone="secondary"
+        />
+      </div>
+    </Footer>
+  </div>
+</div>
+`;
+
+exports[`component:Dialog Should render Dialog with every optional props present 1`] = `
+<div
+  className="dialogBackground"
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="dialogBody openedDialog"
+    onClick={[Function]}
+  >
+    <Header
+      id=""
+      smaller={true}
+      text="Top of Page"
+    />
+    <div
+      className="flex-content"
+    >
+      <h5>
+        hello world
+      </h5>
+    </div>
+    <Footer
+      id=""
+      reducedPadding={true}
+    >
+      <div
+        className="dialogButtons"
+      >
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          id=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Vamos Amigo"
+          tone="green"
+        />
+        <Button
+          boxIconClassName=""
+          className="flex-grow"
+          disabled={false}
+          formId=""
+          id=""
+          isSubmit={false}
+          onClick={[Function]}
+          text="Cancel"
+          tone="secondary"
+        />
+      </div>
+    </Footer>
+  </div>
+</div>
+`;

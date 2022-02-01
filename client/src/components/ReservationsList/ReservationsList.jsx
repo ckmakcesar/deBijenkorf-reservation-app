@@ -5,6 +5,7 @@ import ReservationDetails from '../ReservationDetails';
 import Reservation from '../../types/Reservation';
 import Store from '../../types/Store';
 import Status from '../../types/Status';
+import { isEmptyObj } from '../../utils/utils.js';
 
 import styles from '../../styles/ReservationsList.module.css';
 
@@ -20,14 +21,15 @@ const ReservationsList = ({
     return (<div>LOADING DISC</div>); // TODO
   }
 
-  const reservationCount = Object.keys(reservationsMap).length;
-
   return (
-    <>
-      {!reservationCount
+    <div id='Reservations-list'>
+      {isEmptyObj(reservationsMap)
         ? <div className={styles.emptyState}>There are no reservations</div> // TODO - EMPTY STATE
         : Object.values(reservationsMap).map((reservation) => (
-          <div key={reservation.id}>
+          <div
+            key={reservation.id}
+            id={`Reservation-details-${reservation.id}`}
+          >
             <ReservationDetails
               reservation={reservation}
               store={storesMap[reservation.storeId]}
@@ -35,11 +37,11 @@ const ReservationsList = ({
               setReservationToDelete={setReservationToDelete}
               setDrawerReservationId={setDrawerReservationId}
             />
-            <hr id='dotted' />
+            <hr className='dotted' />
           </div>
         ))
       }
-    </>
+    </div>
   );
 };
 

@@ -11,8 +11,16 @@ import UpsertReservationForm from '../components/UpsertReservationForm';
 import Reservation from '../types/Reservation';
 import Store from '../types/Store';
 import Status from '../types/Status';
+import { isEmptyObj } from '../utils/utils.js';
 
 import styles from '../styles/ReservationsPage.module.css';
+
+const deleteOnePrompt = (reservation) => `You are about to delete the reservation 
+'${reservation?.name}'. If you proceed with this 
+action the item will be permanently deleted.`;
+
+const deleteAllPrompt = `You are about to delete ALL reservations . If you proceed with this 
+action the items will be permanently deleted.`;
 
 const ReservationsPage = ({
   onMount,
@@ -22,7 +30,8 @@ const ReservationsPage = ({
   statusesMap,
   onCreate,
   onUpdate,
-  onDelete,
+  onDeleteOne,
+  onDeleteAll,
 }) => {
   useEffect(() => {
     onMount()
@@ -31,17 +40,20 @@ const ReservationsPage = ({
   // 0 -> drawer closed; -1 -> create; positive values -> edit
   const [drawerReservationId, setDrawerReservationId] = useState(0);
 
-  // not null -> open Delete Dialog
+  // null -> Dialog closed; -1 -> Dialog for delete ALL; others -> Dialog for Delete One Reservation
   const [reservationToDelete, setReservationToDelete] = useState(null);
 
   const handleDeleteReservation = () => {
-    onDelete(reservationToDelete?.id)
+    onDeleteOne(reservationToDelete?.id);
   };
+
+  const aboutToDeleteAll = (reservationToDelete === -1);
 
   return (
     <div className={styles.reservationsPageContainer}>
       <Header
         text='Reservations'
+        id='reservations-page' // will be modified down the components to make tag id unique
       />
 
       <div className='flex-content'>
@@ -55,13 +67,25 @@ const ReservationsPage = ({
         />
       </div>
 
-      <Footer>
-        <div className={styles.createReservationButton}>
+      <Footer
+        id='reservations-page' // will be modified down the components to make tag id unique
+      >
+        <div className={styles.reservartionsPageFooter}>
+          <Button
+            onClick={() => { setReservationToDelete(-1); }}
+            text='Delete All'
+            boxIconClassName='bx-trash'
+            tone='red'
+            disabled={isEmptyObj(reservationsMap)}
+            id='delete-all'
+          />
+
           <Button
             onClick={() => { setDrawerReservationId(-1); }}
             text='Create Reservation'
             boxIconClassName='bx-plus'
             tone='green'
+            id='create-reservation'
           />
         </div>
       </Footer>
@@ -76,6 +100,7 @@ const ReservationsPage = ({
         confirmButtonTone={drawerReservationId === -1 ? 'green' : drawerReservationId > 0 ? 'blue' : ''}
         onClose={() => { setDrawerReservationId(0); }}
         onConfirm={drawerReservationId === -1 ? onCreate : onUpdate}
+        id='create-reservation'
       >
         <UpsertReservationForm
           key={reservationsMap[drawerReservationId]?.id}
@@ -87,16 +112,18 @@ const ReservationsPage = ({
 
       <Dialog
         isOpen={!!reservationToDelete}
-        headerTitle='Delete Reservation'
-        confirmButtonText='Delete'
+        headerTitle={aboutToDeleteAll ? 'Delete All Reservations' : 'Delete Reservation'}
+        confirmButtonText={aboutToDeleteAll ? 'Delete All' : 'Delete'}
         confirmButtonTone='red'
         onClose={() => { setReservationToDelete(null); }}
-        onConfirm={handleDeleteReservation}
+        onConfirm={aboutToDeleteAll
+          ? () => onDeleteAll()
+          : (reservationId) => handleDeleteReservation(reservationId)
+        }
+        id='delete-reservation'
       >
         <div className={styles.dialogContent}>
-          {`You are about to delete the reservation 
-          '${reservationToDelete?.name}'. If you proceed with this 
-          action the item will be permanently deleted.`}
+          {aboutToDeleteAll ? deleteAllPrompt : deleteOnePrompt(reservationToDelete)}
         </div>
       </Dialog>
     </div>
@@ -114,7 +141,8 @@ ReservationsPage.propTypes = {
   statusesMap: PropTypes.objectOf(PropTypes.exact(Status)).isRequired,
   onCreate: PropTypes.func.isRequired,
   onUpdate: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onDeleteOne: PropTypes.func.isRequired,
+  onDeleteAll: PropTypes.func.isRequired,
 };
 
 export default ReservationsPage;

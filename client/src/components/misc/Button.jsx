@@ -12,6 +12,7 @@ const Button = ({
   formId,
   boxIconClassName,
   tone,
+  id,
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -31,18 +32,21 @@ const Button = ({
     }
   };
 
-  const conditionalColorTone = {
-    [styles.hover]: hover && !tone,
-    [styles[tone]]: !hover && tone,
-    [styles[tone + 'Hover']]: hover && tone,
-    [styles.disabled]: disabled,
-  };
+  const conditionalColorTone = (disabled
+    ? styles.disabled
+    : {
+      [styles.hover]: hover && !tone,
+      [styles[tone]]: !hover && tone,
+      [styles[tone + 'Hover']]: hover && tone,
+    }
+  );
 
   return (
     <div
       className={clsx(
         styles.buttonContainer,
-        conditionalColorTone
+        conditionalColorTone,
+        disabled && styles.disabledBorder
       )}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
@@ -65,6 +69,7 @@ const Button = ({
           : null
         }
         <input
+          {...(id ? { id: `Button-${id}` } : null)} // optional id - should be unique
           className={clsx(
             styles.button,
             boxIconClassName && styles.buttonReducedLeftPadding,
@@ -90,6 +95,7 @@ Button.propTypes = {
   formId: PropTypes.string,
   boxIconClassName: PropTypes.string,
   tone: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -100,6 +106,7 @@ Button.defaultProps = {
   formId: '',
   boxIconClassName: '',
   tone: '',
+  id: '',
 };
 
 export default Button;

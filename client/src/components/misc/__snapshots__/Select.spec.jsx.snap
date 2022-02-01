@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component:Select Should render Select with every optional props absent 1`] = `
+<label
+  className="input-field-label"
+>
+  <div />
+  <select
+    className="select"
+    disabled={false}
+    name=""
+    onChange={[Function]}
+    required={false}
+    value=""
+  >
+    <option
+      key="0"
+    >
+      EN
+    </option>
+    <option
+      key="1"
+    >
+      ES
+    </option>
+    <option
+      key="2"
+    >
+      NL
+    </option>
+  </select>
+</label>
+`;
+
+exports[`component:Select Should render Select with every optional props present 1`] = `
+<label
+  className="input-field-label"
+>
+  <div>
+    Select a Language*
+  </div>
+  <select
+    className="select"
+    disabled={false}
+    name="language-options"
+    onChange={[Function]}
+    required={true}
+    value="EN"
+  >
+    <option
+      key="0"
+    >
+      EN
+    </option>
+    <option
+      key="1"
+    >
+      ES
+    </option>
+    <option
+      key="2"
+    >
+      NL
+    </option>
+  </select>
+</label>
+`;

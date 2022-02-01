@@ -5,7 +5,9 @@ import { TOAST_LIMIT } from '../../constants';
 
 // simple message push - for errors
 const ToastNotification = () => (
-  <ToastContainer limit={TOAST_LIMIT} />
+  <div id='Toast-container'>
+    <ToastContainer limit={TOAST_LIMIT} />
+  </div>
 );
 
 export default ToastNotification;

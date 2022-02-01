@@ -27,10 +27,26 @@ module.exports = {
         test: /\.js$/,
         loader: 'source-map-loader',
       },
-
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [
+          'style-loader',
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/, // for CSS modules
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+        exclude: /\.module\.css$/ // for global CSS
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,

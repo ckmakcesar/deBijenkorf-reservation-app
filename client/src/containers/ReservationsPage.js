@@ -11,6 +11,7 @@ import {
   reservationCreateRequest,
   reservationUpdateRequest,
   reservationDeleteRequest,
+  reservationDeleteAllRequest,
  } from '../actions/reservations';
 import ReservationsPage from '../pages/ReservationsPage';
 
@@ -31,8 +32,11 @@ const mapDispatchToProps = (dispatch) => ({
   onUpdate: (reservation) => {
     dispatch(reservationUpdateRequest(reservation));
   },
-  onDelete: (reservationId) => {
+  onDeleteOne: (reservationId) => {
     dispatch(reservationDeleteRequest(reservationId));
+  },
+  onDeleteAll: () => {
+    dispatch(reservationDeleteAllRequest());
   },
 });
 

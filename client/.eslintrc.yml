@@ -3,12 +3,11 @@ env:
   node: true
   es6: true
   jest: true
-  # cypress/globals: true
+  cypress/globals: true
 extends:
   - "eslint:recommended"
   - "plugin:react/recommended"
-  # - "plugin:cypress/recommended"
-  # - airbnb
+  - "plugin:cypress/recommended"
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly

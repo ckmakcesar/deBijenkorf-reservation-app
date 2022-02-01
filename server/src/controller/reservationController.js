@@ -80,6 +80,7 @@ reservationController.put(
   },
 );
 
+// delete ONE
 reservationController.delete(
   '/:reservationId',
   [
@@ -94,6 +95,15 @@ reservationController.delete(
     } else {
       res.status(404).json({ message: 'Resource Not Found' });
     }
+  },
+);
+
+// delete ALL
+reservationController.delete(
+  '/',
+  async (_, res) => {
+    await Reservation.sync({ force: true });
+    res.status(204).end();
   },
 );
 

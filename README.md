@@ -2,6 +2,10 @@
 
 Extended from https://github.com/deBijenkorf/fullstack-assignment#scenario-reservation-overview
 
+## How to Test API?
+
+Test With Postman: https://www.getpostman.com/collections/0fbb27dd9e4056de37fc
+
 ## How to Run?
 
 There are two ways to run the application

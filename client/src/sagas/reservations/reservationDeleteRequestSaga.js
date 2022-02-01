@@ -9,7 +9,7 @@ import { addActionSuccessToast, addActionFailureToast } from '../../utils/toasts
 
 function* reservationDeleteRequestWorker({ type, payload: reservationId }) {
   try {
-    yield reservationService.del(reservationId);
+    yield reservationService.deleteOne(reservationId);
     yield put(reservationDeleteRequestSuccess(reservationId));
     addActionSuccessToast(type);
   } catch (error) {

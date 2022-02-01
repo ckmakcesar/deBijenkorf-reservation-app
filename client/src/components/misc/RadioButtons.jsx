@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 import styles from '../../styles/misc/RadioButtons.module.css';
 
 const RadioButtons = ({
+  label,
   values,
   onChange,
-  label,
   name,
   value: selectedValue,
   required,
   disabled,
+  id,
 }) => (
   <div className='input-field-label'>
     <div>{label ? `${label}${label && required ? '*' : ''}` : undefined}</div>
@@ -22,15 +23,21 @@ const RadioButtons = ({
         className={clsx(styles.radioButtonWithLabel, index > 0 && styles.paddingTop)}
       >
         <input
+          {...(id ? { id: `Radio-button-${id}-${val}` } : null)} // optional id - should be unique
           type='radio'
           value={val}
           name={name}
           checked={selectedValue === val}
           onChange={e => { onChange(e.target.value); }}
-          id={val}
+          required={required}
           disabled={disabled}
         />
-        <label htmlFor={val}>{val}</label>
+        <label
+          htmlFor={val}
+          onClick={() => { onChange(val); }}
+        >
+          {val}
+        </label>
       </div>
     ))}
   </div>
@@ -40,13 +47,14 @@ const RadioButtons = ({
 // PROPS
 // *********************************************************************************************************************
 RadioButtons.propTypes = {
+  label: PropTypes.string,
   values: PropTypes.arrayOf(PropTypes.string).isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 RadioButtons.defaultProps = {
@@ -55,6 +63,7 @@ RadioButtons.defaultProps = {
   value: '',
   required: false,
   disabled: false,
+  id: '',
 };
 
 export default RadioButtons;
