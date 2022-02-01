@@ -3,6 +3,7 @@ server/logs/
 **/.DS_Store
 **/coverage
 server/public
+**/*.log
 
 # cypress
 **/videos

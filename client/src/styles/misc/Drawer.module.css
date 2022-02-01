@@ -1,5 +1,6 @@
 .drawerContainer {
   --transition-speed: 0.3s;
+  overflow-y: hidden;
 }
 .drawer {
   background: #fff;
@@ -18,7 +19,7 @@
 }
 .openedDrawer {
   transform: translateX(0);
-  box-shadow: 0 0 15px rgba(200, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
 }
 
 .drawerButtons {

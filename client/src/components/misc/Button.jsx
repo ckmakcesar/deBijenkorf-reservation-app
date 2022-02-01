@@ -72,7 +72,7 @@ const Button = ({
           {...(id ? { id: `Button-${id}` } : null)} // optional id - should be unique
           className={clsx(
             styles.button,
-            boxIconClassName && styles.buttonReducedLeftPadding,
+            styles.buttonReducedLeftPadding,
             conditionalColorTone
           )}
           type={isSubmit ? 'submit' : 'button'}

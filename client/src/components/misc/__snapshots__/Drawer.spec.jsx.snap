@@ -34,7 +34,6 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
       >
         <Button
           boxIconClassName=""
-          className="flex-grow"
           disabled={false}
           formId=""
           id=""
@@ -45,7 +44,6 @@ exports[`component:Drawer Should render Drawer with every optional props absent 
         />
         <Button
           boxIconClassName=""
-          className="flex-grow"
           disabled={false}
           formId=""
           id=""
@@ -94,7 +92,6 @@ exports[`component:Drawer Should render Drawer with every optional props present
       >
         <Button
           boxIconClassName=""
-          className="flex-grow"
           disabled={false}
           formId=""
           id=""
@@ -105,7 +102,6 @@ exports[`component:Drawer Should render Drawer with every optional props present
         />
         <Button
           boxIconClassName=""
-          className="flex-grow"
           disabled={false}
           formId="form-002"
           id=""

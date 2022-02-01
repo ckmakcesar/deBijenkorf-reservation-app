@@ -14,4 +14,8 @@
   .footerWrapper {
     padding: 12px;
   }
+  .footerReducedPadding {
+    padding: 8px;
+    margin-bottom: -4px;
+  }
 }

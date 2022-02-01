@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ReservationDetails from '../ReservationDetails';
+import Spinner from '../misc/Spinner';
 import Reservation from '../../types/Reservation';
 import Store from '../../types/Store';
 import Status from '../../types/Status';
@@ -18,13 +19,13 @@ const ReservationsList = ({
   setDrawerReservationId,
 }) => {
   if (loading) {
-    return (<div>LOADING DISC</div>); // TODO
+    return (<Spinner />);
   }
 
   return (
     <div id='Reservations-list'>
       {isEmptyObj(reservationsMap)
-        ? <div className={styles.emptyState}>There are no reservations</div> // TODO - EMPTY STATE
+        ? <div className={styles.emptyState}>There are no reservations</div> // EMPTY STATE
         : Object.values(reservationsMap).map((reservation) => (
           <div
             key={reservation.id}

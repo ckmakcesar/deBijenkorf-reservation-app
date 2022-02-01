@@ -91,7 +91,6 @@ const Drawer = ({
           <div className={styles.drawerButtons}>
             <Button
               {...(id ? { id: `${id}-dialog-cancel` } : null)} // optional id - should be unique
-              className='flex-grow'
               onClick={() => { onClose() }}
               text='Cancel'
               tone='secondary'
@@ -99,7 +98,6 @@ const Drawer = ({
 
             <Button
               {...(id ? { id: `${id}-drawer-confirm` } : null)} // optional id - should be unique
-              className='flex-grow'
               text={confirmButtonText}
               tone={confirmButtonTone}
               {...confirmButtonOptionalProps}
