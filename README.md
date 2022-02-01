@@ -10,7 +10,7 @@ Test With Postman: https://www.getpostman.com/collections/0fbb27dd9e4056de37fc
 
 ## Structure of the App
 
-- Frontend Client: React Javascript
+- Frontend Client: React Javascript; Jest & Cypress for testing
 - Backend Server: Node.JS / Express
 - Database: Postgres
 
